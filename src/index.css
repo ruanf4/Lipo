@@ -1,0 +1,87 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 54 65% 97%;
+    --foreground: 40 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 40 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 40 20% 20%;
+
+    --primary: 42 100% 42%;
+    --primary-foreground: 45 40% 98%;
+
+    --secondary: 45 100% 45%;
+    --secondary-foreground: 40 20% 20%;
+
+    --muted: 45 40% 96.1%;
+    --muted-foreground: 38 16.3% 46.9%;
+
+    --accent: 50 100% 90%;
+    --accent-foreground: 40 20% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 40% 98%;
+
+    --border: 40 31.8% 91.4%;
+    --input: 40 31.8% 91.4%;
+    --ring: 42 100% 42%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 48 100% 98%;
+    --sidebar-foreground: 40 5.3% 26.1%;
+    --sidebar-primary: 42 100% 42%;
+    --sidebar-primary-foreground: 48 100% 98%;
+    --sidebar-accent: 48 100% 95.9%;
+    --sidebar-accent-foreground: 40 5.9% 10%;
+    --sidebar-border: 45 13% 91%;
+    --sidebar-ring: 45 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.progress-bar {
+  height: 10px;
+  background: linear-gradient(90deg, theme('colors.lipomax.primary'), theme('colors.lipomax.secondary'));
+  border-radius: var(--radius);
+  transition: width 0.5s ease-in-out;
+}
+
+.cta-button {
+  @apply bg-gradient-to-r from-lipomax-primary to-lipomax-secondary text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 active:scale-95 animate-pulse-scale;
+}
+
+.package-card {
+  @apply border-2 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl;
+}
+
+.package-card.selected {
+  @apply border-lipomax-secondary bg-lipomax-light;
+}
+
+.form-input {
+  @apply w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-lipomax-primary;
+}
